@@ -79,13 +79,13 @@ const ShippingAddressForm: React.FC<{
               label="City"
               type="city"
               name="city"
-              autoComplete="city"
+              autoComplete="address-level2"
             />
             <TextField
               label="State/Province"
               type="state"
               name="countryArea"
-              autoComplete="state"
+              autoComplete="postal-code"
             />
           </div>
           <div className="address-form__grid">
@@ -110,6 +110,7 @@ const ShippingAddressForm: React.FC<{
             name="phone"
             autoComplete="tel"
           />
+
           <Button type="submit" disabled={loading}>
             {loading ? "Loading" : buttonText}
           </Button>

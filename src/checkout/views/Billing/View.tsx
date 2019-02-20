@@ -6,7 +6,7 @@ import { FormAddressType, ShippingAddressForm } from "../../../components";
 import { ShopContext } from "../../../components/ShopProvider/context";
 import { getShop_shop } from "../../../components/ShopProvider/types/getShop";
 import { maybe } from "../../../core/utils";
-import { StepCheck, Steps } from "../../components";
+import { CartSummary, StepCheck, Steps } from "../../components";
 import {
   CheckoutContext,
   CheckoutContextInterface,
