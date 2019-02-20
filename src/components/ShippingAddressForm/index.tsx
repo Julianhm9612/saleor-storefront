@@ -24,7 +24,7 @@ const ShippingAddressForm: React.FC<{
   errors: FormError[];
   loading: boolean;
   onSubmit: (event: React.FormEvent<any>, data: FormAddressType) => any;
-}> = ({ data, billing, buttonText, errors, loading, onSubmit }) => (
+}> = ({ data, billing, buttonText, errors, loading, onSubmit, children }) => (
   <div className="address-form">
     <ShopContext.Consumer>
       {({ countries }) => (
@@ -33,14 +33,15 @@ const ShippingAddressForm: React.FC<{
           onSubmit={(evt, data) => onSubmit(evt, data as any)}
           data={data}
         >
-          {!billing ? (
+          {children}
+          {!billing && (
             <TextField
               label="Email Address"
               type="email"
               autoComplete="email"
               name="email"
             />
-          ) : null}
+          )}
           <div className="address-form__grid">
             <TextField
               label="First Name"
@@ -103,20 +104,12 @@ const ShippingAddressForm: React.FC<{
               }))}
             />
           </div>
-          {!billing ? (
-            <div>
-              <TextField
-                label="Phone number"
-                type="tel"
-                name="phone"
-                autoComplete="phone-number"
-              />
-              <label className="checkbox">
-                <input name="asBilling" type="checkbox" />
-                <span>Use as Billing Address</span>
-              </label>
-            </div>
-          ) : null}
+          <TextField
+            label="Phone number"
+            type="tel"
+            name="phone"
+            autoComplete="tel"
+          />
           <Button type="submit" disabled={loading}>
             {loading ? "Loading" : buttonText}
           </Button>
