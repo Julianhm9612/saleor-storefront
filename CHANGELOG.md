@@ -9,6 +9,7 @@ All notable, unreleased changes to this project will be documented in this file.
 - Add order details page - #262 by @piotrgrundas
 - Add order confirmation page - #263 by @piotrgrundas
 - Fix checkout composition - #264 by @piotrgrundas
+- Add ability to select user stored addresses, update copying shipping address to billing - #265 by @piotrgrundas
 
 ## 0.4.0
 
