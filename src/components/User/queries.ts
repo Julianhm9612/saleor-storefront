@@ -1,12 +1,24 @@
 import gql from "graphql-tag";
+
+import { checkoutAddressFragment } from "../../checkout/queries";
 import { TypedMutation } from "../../core/mutations";
 import { TokenAuth, TokenAuthVariables } from "./types/TokenAuth";
 
 export const userFragment = gql`
+  ${checkoutAddressFragment}
   fragment User on User {
     id
     email
     isStaff
+    defaultShippingAddress {
+      ...Address
+    }
+    defaultBillingAddress {
+      ...Address
+    }
+    addresses {
+      ...Address
+    }
   }
 `;
 
